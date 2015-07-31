@@ -1,3 +1,12 @@
 module.exports = function create() {
-  require('./game').add.sprite(100, 100, 'playerGreen');
+
+  var g = require('./game');
+
+  g.physics.startSystem(Phaser.Physics.ARCADE);
+
+
+  require('./map');
+  require('./players').create('player:green');
+
+
 }
