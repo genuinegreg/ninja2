@@ -2,7 +2,7 @@
 console.log('create game...')
 
 
-module.exports = new Phaser.Game(800, 600, Phaser.AUTO, '', {
+module.exports = new Phaser.Game(1280, 720, Phaser.AUTO, '', {
   preload: require('./preload'),
   create: require('./create'),
   update: require('./update')
