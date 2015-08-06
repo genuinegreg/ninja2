@@ -2,10 +2,10 @@ import {game} from '../../game';
 
 game.load.image(
   'player:green',
-  require('file!./green.png'));
+  require('./green.png'));
 game.load.image(
   'player:blue',
-  require('file!./blue.png'));
+  require('./blue.png'));
 game.load.image(
   'player:red',
-  require('file!./red.png'));
+  require('./red.png'));
