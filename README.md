@@ -1,7 +1,13 @@
-# Install
-```
-npm install
-npm start
-```
+# Ninja 2
 
-brancher un pad et aller voir sur http://localhost:8080/webpack-dev-server/bundle
+Un petit jeux de duel en local coop
+
+## Test
+
+`npm start`
+
+http://localhost:8080/webpack-dev-server/bundle
+
+## build
+
+`npm install`
