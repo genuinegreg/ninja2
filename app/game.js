@@ -1,9 +1,7 @@
 
-import {Player} from './Player';
-
-export default new Phaser.Game(
-  1280, 720, Phaser.AUTO, '', {
+export var game =  new Phaser.Game(1280, 720, Phaser.AUTO, '', {
   preload() {
+    var Player = require('./Player');
   },
   create() {
 
