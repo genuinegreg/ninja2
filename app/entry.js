@@ -1,4 +1,4 @@
-require('script!../node_modules/phaser/build/phaser.min.js');
+require('script!phaser');
 require('file?name=index.html!./index.html')
 
 require.ensure(
