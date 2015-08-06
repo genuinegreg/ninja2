@@ -1,18 +1,10 @@
 import {game} from '../game';
+import './assets';
 
-game.load.image(
-  'player:green',
-  require('file!./assets/green.png'));
-game.load.image(
-  'player:blue',
-  require('file!./assets/blue.png'));
-game.load.image(
-    'player:red',
-    require('file!./assets/red.png'));
+console.log('Player loaded');
 
-
-export class Player {
-  contructor() {
-
+export default class Player {
+  constructor(color = 'red', x = 100, y = 100) {
+    this.sprite = game.add.sprite(x, y, `player:${color}`);
   }
 }
