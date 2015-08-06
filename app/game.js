@@ -1,13 +1,14 @@
 
-console.log('create game...')
+import {Player} from './Player';
 
+export default new Phaser.Game(
+  1280, 720, Phaser.AUTO, '', {
+  preload() {
+  },
+  create() {
 
-module.exports = new Phaser.Game(1280, 720, Phaser.AUTO, '', {
-  preload: require('./preload'),
-  create: require('./create'),
-  update: require('./update')
+  },
+  update() {
+
+  }
 });
-
-// module.exports = game;
-
-console.log('create game... OK')
