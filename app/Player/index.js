@@ -1,8 +1,8 @@
 import {game} from '../game';
 import './assets';
 
-const MOVE_LEFT = -150;
-const MOVE_RIGHT = 150;
+const MOVE_MAX = 200;
+const MOVE_INC = MOVE_MAX / 10;
 
 export
 default class Player {
@@ -16,25 +16,41 @@ default class Player {
 
     //  Player physics properties. Give the little guy a slight bounce.
     this.sprite.body.bounce.y = 0;
-    this.sprite.body.collideWorldBounds = true
+    this.sprite.body.collideWorldBounds = true;
+    this.sprite.body.maxVelocity = new Phaser.Point(MOVE_MAX, MOVE_MAX*2);
+    this.velocity = this.sprite.body.velocity;
   }
 
   update(left, right, up) {
-    console.log(up, this.sprite.body.touching.down)
 
+    if (this.sprite.body.blocked.down) {
+      if (!left && !right || left && right) {
+        this.velocity.x = 0;
+      }
 
-    this.sprite.body.velocity.x = 0;
+      if (left && !right) {
+        this.sprite.body.velocity.x = -MOVE_MAX;
+      }
+      else if (right && !left) {
+        this.sprite.body.velocity.x = +MOVE_MAX;
+      }
 
-    if (left && !right) {
-      this.sprite.body.velocity.x = MOVE_LEFT;
+      if (up) {
+        this.sprite.body.velocity.y = -400;
+      }
     }
-    else if (right && !left) {
-      this.sprite.body.velocity.x = MOVE_RIGHT;
+    else {
+      if (left && !right) {
+        this.sprite.body.velocity.x -= MOVE_INC;
+      }
+      else if (right && !left) {
+        this.sprite.body.velocity.x += MOVE_INC;
+      }
     }
 
-    if (up && this.sprite.body.blocked.down) {
 
-      this.sprite.body.velocity.y = -350;
-    }
+
+
+
   }
 }

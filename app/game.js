@@ -25,7 +25,6 @@ var game = new Phaser.Game(1280, 720, Phaser.AUTO, loaderElement, {
   update: () => {
     game.players.forEach((player, key) => {
       game.physics.arcade.collide(player.sprite, game.map.layer);
-      console.log(game.cursors.up.isDown, game.cursors.up.repeats)
       player.update(game.cursors.left.isDown, game.cursors.right.isDown, game.cursors.up.isDown && game.cursors.up.repeats < 1);
     });
   },
