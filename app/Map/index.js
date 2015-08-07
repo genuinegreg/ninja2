@@ -3,7 +3,7 @@ import './assets';
 
 
 export default class Map {
-  constructor() {
+  constructor(mapId, tileset) {
 
   }
 }
