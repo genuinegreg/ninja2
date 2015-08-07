@@ -8,11 +8,10 @@ default class Player {
 
 
     //  We need to enable physics on the player
-    game.physics.arcade.enable(this.sprite);
+    game.physics.enable(this.sprite);
 
     //  Player physics properties. Give the little guy a slight bounce.
-    this.sprite.body.bounce.y = 0.2;
-    this.sprite.body.gravity.y = 300;
+    this.sprite.body.bounce.y = 0;
     this.sprite.body.collideWorldBounds = true
   }
 }
