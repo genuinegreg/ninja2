@@ -19,13 +19,11 @@ var game = new Phaser.Game(1280, 720, Phaser.AUTO, loaderElement, {
       blue: new game.Player('blue', 200),
       green: new game.Player('green', 300),
     }
-
-    console.log(game.map);
   },
   update: () => {
-    game.physics.arcade.collide(game.players.red.sprite, game.map.tilemap);
-    // game.physics.arcade.collide(game.players.blue.sprite, layer);
-    // game.physics.arcade.collide(game.players.green.sprite, layer);
+    game.physics.arcade.collide(game.players.red.sprite, game.map.layer);
+    game.physics.arcade.collide(game.players.blue.sprite, game.map.layer);
+    game.physics.arcade.collide(game.players.green.sprite, game.map.layer);
 
   },
   render: () => {
