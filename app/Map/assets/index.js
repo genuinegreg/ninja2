@@ -15,7 +15,7 @@ export var tilemaps = {
   'map:map:1': {
     name: 'Map ',
     background: '#000',
-    gravity: 300,
+    gravity: 400,
     layer: 'layer1',
     tilesets: {
       'basic': tilesets['map:tileset:basic']
