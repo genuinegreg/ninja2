@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server  -d --progress --colors",
-    "install": "webpack --progress --colors"
+    "build": "webpack --progress --colors"
   },
   "author": "",
   "license": "MIT",
