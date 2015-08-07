@@ -26,20 +26,13 @@
          "imageheight":32,
          "imagewidth":64,
          "margin":0,
-         "name":"tileset1",
+         "name":"basic",
          "properties":
             {
 
             },
          "spacing":0,
          "tileheight":16,
-         "tileproperties":
-            {
-             "0":
-                {
-                 "collides":"1"
-                }
-            },
          "tilewidth":16
         }],
  "tilewidth":16,

@@ -13,6 +13,10 @@ module.exports = {
       test: /\.(png|jpeg|jpg|map\.json)$/,
       exclude: /(node_modules|bower_components)/,
       loader: 'file?name=assets/[hash].[ext]',
+    }, {
+      test: /\.tileset\.json$/,
+      exclude: /(node_modules|bower_components)/,
+      loader: 'json',
     }]
   }
 };
