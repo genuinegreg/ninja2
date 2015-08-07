@@ -10,4 +10,4 @@ http://localhost:8080/webpack-dev-server/index.html
 
 ## build
 
-`npm install`
+`npm run build`
