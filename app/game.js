@@ -14,20 +14,20 @@ var game = new Phaser.Game(1280, 720, Phaser.AUTO, loaderElement, {
 
     game.map = new game.Map('map:map:1');
 
-    game.players = {
-      red: new game.Player('red'),
-      blue: new game.Player('blue', 200),
-      green: new game.Player('green', 300),
-    }
+    game.players = [
+      new game.Player('red'),
+      new game.Player('blue', 200),
+      new game.Player('green', 300),
+    ]
   },
   update: () => {
-    game.physics.arcade.collide(game.players.red.sprite, game.map.layer);
-    game.physics.arcade.collide(game.players.blue.sprite, game.map.layer);
-    game.physics.arcade.collide(game.players.green.sprite, game.map.layer);
-
+    game.players.forEach((player, key) => {
+      console.log(player)
+      game.physics.arcade.collide(player.sprite, game.map.layer);
+    });
   },
   render: () => {
     // game.debug.body(p);
-    game.debug.bodyInfo(game.players.red.sprite, 32, 320);
+    game.debug.bodyInfo(game.players[0].sprite, 32, 320);
   }
 });
