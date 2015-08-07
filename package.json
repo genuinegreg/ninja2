@@ -11,13 +11,14 @@
     "babel-loader": "^5.3.2",
     "babel-runtime": "^5.8.20",
     "file-loader": "^0.8.4",
+    "json-loader": "^0.5.2",
     "script-loader": "^0.6.1",
     "webpack": "^1.10.5",
     "webpack-dev-server": "^1.10.1"
   },
   "scripts": {
     "start": "webpack-dev-server  -d --progress --colors",
-    "install": "webpack --progress --colors"
+    "build": "webpack --progress --colors --optimize-minimize"
   },
   "author": "",
   "license": "MIT",
