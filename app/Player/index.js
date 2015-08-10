@@ -1,8 +1,8 @@
 import {game} from '../game';
 import './assets';
 
-const MOVE_MAX = 200;
-const MOVE_INC = MOVE_MAX / 10;
+const MOVE_MAX = 300;
+const MOVE_INC = MOVE_MAX / 20;
 
 export
 default class Player {
@@ -18,7 +18,39 @@ default class Player {
     this.sprite.body.bounce.y = 0;
     this.sprite.body.collideWorldBounds = true;
     this.sprite.body.maxVelocity = new Phaser.Point(MOVE_MAX, MOVE_MAX*2);
+    this.body = this.sprite.body;
+    // this.body.gravity = 400;
     this.velocity = this.sprite.body.velocity;
+  }
+
+  moveLeft() {
+    this.sprite.body.velocity.x = -MOVE_MAX;
+  }
+
+  moveRight() {
+      this.sprite.body.velocity.x = +MOVE_MAX;
+  }
+
+  moveLeftInTheAir() {
+    this.sprite.body.velocity.x -= MOVE_INC;
+  }
+
+  moveRightInTheAir() {
+    this.sprite.body.velocity.x += MOVE_INC;
+  }
+
+  jump() {
+    this.sprite.body.velocity.y = -800;
+  }
+
+  jumpLeft() {
+    this.moveLeft()
+    this.jump();
+  }
+
+  jumpRight() {
+    this.moveRight()
+    this.jump();
   }
 
   update(left, right, up) {
@@ -29,22 +61,29 @@ default class Player {
       }
 
       if (left && !right) {
-        this.sprite.body.velocity.x = -MOVE_MAX;
+        this.moveLeft();
       }
       else if (right && !left) {
-        this.sprite.body.velocity.x = +MOVE_MAX;
+        this.moveRight();
       }
 
       if (up) {
-        this.sprite.body.velocity.y = -400;
+        this.jump();
       }
     }
     else {
       if (left && !right) {
-        this.sprite.body.velocity.x -= MOVE_INC;
+        this.moveLeftInTheAir()
       }
       else if (right && !left) {
-        this.sprite.body.velocity.x += MOVE_INC;
+        this.moveRightInTheAir()
+      }
+
+      if(up && this.sprite.body.blocked.left) {
+        this.jumpRight();
+      }
+      else if (up && this.sprite.body.blocked.right) {
+        this.jumpLeft();
       }
     }
 
