@@ -14,7 +14,7 @@ game.load.tilemap('map:map:1', require('./1.map.json'), null, Phaser.Tilemap.TIL
 export var tilemaps = {
   'map:map:1': {
     name: 'Map ',
-    background: '#000',
+    background: '#FFF',
     gravity: 1200,
     layer: 'layer1',
     tilesets: {

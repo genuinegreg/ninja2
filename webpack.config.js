@@ -10,7 +10,7 @@ module.exports = {
       exclude: /(node_modules|bower_components)/,
       loader: 'babel',
     }, {
-      test: /\.(png|jpeg|jpg|map\.json)$/,
+      test: /\.(png|jpeg|jpg|(map|atlas)\.json)$/,
       exclude: /(node_modules|bower_components)/,
       loader: 'file?name=assets/[hash].[ext]',
     }, {

@@ -9,3 +9,11 @@ game.load.image(
 game.load.image(
   'player:red',
   require('./red.png'));
+
+
+
+
+game.load.atlasJSONHash(
+  'player:blue:spritesheet',
+  require('./bluePlayer/spritesheet.png'),
+  require('./bluePlayer/blue.atlas.json'))

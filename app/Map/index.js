@@ -16,6 +16,7 @@ export default class Map {
     Object.keys(tilemaps[name].tilesets).map((key) => {
       this.tilemap.addTilesetImage(key, tilemaps[name].tilesets[key].name);
       this.layer = this.tilemap.createLayer(tilemaps[name].layer);
+
       this.tilemap.setCollision(tilemaps[name].tilesets[key].collides)
 
     })
