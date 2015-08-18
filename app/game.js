@@ -41,8 +41,8 @@ var game = new Phaser.Game(1280, 720, Phaser.AUTO, loaderElement, {
   render: () => {
     // game.debug.body(p);
     game.debug.bodyInfo(game.players[2].sprite, 32, 320);
-    game.debug.body(game.players[0].sprite);
-    game.debug.body(game.players[1].sprite);
-    game.debug.body(game.players[2].sprite);
+    // game.debug.body(game.players[0].sprite);
+    // game.debug.body(game.players[1].sprite);
+    // game.debug.body(game.players[2].sprite);
   }
 });

@@ -16,7 +16,9 @@ default class Player {
     // var plop = [for (i of Array(100).keys()) i];
     // console.log(plop)
 
-    this.sprite = game.add.sprite(x, y, 'player:blue:spritesheet')
+    console.log('load player', color);
+
+    this.sprite = game.add.sprite(x, y, 'player:' + color +':spritesheet')
     // this.sprite.body.height = 60;
     // this.sprite.body.width = 40;
 

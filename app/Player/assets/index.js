@@ -1,19 +1,19 @@
 import {game} from '../../game';
 
-game.load.image(
-  'player:green',
-  require('./green.png'));
-game.load.image(
-  'player:blue',
-  require('./blue.png'));
-game.load.image(
-  'player:red',
-  require('./red.png'));
-
-
-
 
 game.load.atlasJSONHash(
   'player:blue:spritesheet',
-  require('./bluePlayer/spritesheet.png'),
-  require('./bluePlayer/blue.atlas.json'))
+  require('./blue.spritesheet.png'),
+  require('./anim.atlas.json'));
+
+
+game.load.atlasJSONHash(
+  'player:red:spritesheet',
+  require('./red.spritesheet.png'),
+  require('./anim.atlas.json'));
+
+
+game.load.atlasJSONHash(
+  'player:green:spritesheet',
+  require('./green.spritesheet.png'),
+  require('./anim.atlas.json'));
