@@ -18,5 +18,8 @@ module.exports = {
       exclude: /(node_modules|bower_components)/,
       loader: 'json',
     }]
+  },
+  resolve: {
+    modulesDirectories: ['node_modules', 'app']
   }
 };
